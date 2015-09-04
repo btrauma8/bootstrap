@@ -234,6 +234,8 @@ angular.module('ui.bootstrap.tooltip', ['ui.bootstrap.position'])
 
             // Hide the tooltip popup element.
             function hide() {
+              if (!ttScope) return; // If no longer exists
+              
               // First things first: we don't show it anymore.
               ttScope.isOpen = false;
               if (isOpenExp) {
